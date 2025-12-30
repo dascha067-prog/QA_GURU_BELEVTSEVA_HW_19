@@ -19,4 +19,3 @@ def test_search():
         )
         results.should(have.size_greater_than(0))
         results.first.should(have.text("Appium"))
-

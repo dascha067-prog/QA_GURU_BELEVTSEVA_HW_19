@@ -1,13 +1,12 @@
 import allure
-import config
+from selene_in_action import settings
 
 
 def attach_bstack_video(session_id):
-
     import requests
     bstack_session = requests.get(
         f'https://api.browserstack.com/app-automate/sessions/{session_id}.json',
-        auth=(config.bstack_userName, config.bstack_accessKey),
+        auth=(settings.bstack_userName, settings.bstack_accessKey),
     ).json()
     print(bstack_session)
     video_url = bstack_session['automation_session']['video_url']
@@ -21,4 +20,3 @@ def attach_bstack_video(session_id):
         name='video recording',
         attachment_type=allure.attachment_type.HTML,
     )
-
