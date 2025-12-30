@@ -24,7 +24,6 @@ def mobile_management():
             'buildName': 'browserstack-build-1',
             'sessionName': 'BStack first_test',
 
-            # 🔐 данные берутся из settings, как у преподавателя
             'userName': settings.bstack_userName,
             'accessKey': settings.bstack_accessKey,
         }
